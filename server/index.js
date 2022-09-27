@@ -1,7 +1,7 @@
 const http = require('http').createServer()
 const dotenv = require('dotenv')
 
-dotenv.config({path: '../config.env'})
+dotenv.config({path: './config.env'})
 
 const io = require('socket.io')(http, {
     cors: {origin: '*'}

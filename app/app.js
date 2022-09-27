@@ -1,6 +1,6 @@
 const dotenv = require('dotenv')
 
-dotenv.config({path: '../config.env'})
+dotenv.config({path: './config.env'})
 const socket = io('ws://localhost:8080');
 
 socket.on('message', text => {
