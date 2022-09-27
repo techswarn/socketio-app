@@ -4,7 +4,7 @@ let socket;
 
 if (process.env.NODE_ENV == 'development') {
     socket = io('ws://localhost:8080');
-} else {
+} else if(process.env.NODE_ENV == 'production'){
     socket = io('https://socket-chat-jm6xh.ondigitalocean.app/api');
 }
 
