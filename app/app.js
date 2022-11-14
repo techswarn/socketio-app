@@ -1,6 +1,3 @@
-const dotenv = require('dotenv')
-
-dotenv.config({path: './config.env'})
 
 const socket = io('ws://chat-app-ced8w.ondigitalocean.app/server')
 
@@ -11,8 +8,6 @@ socket.on('message', text => {
 })
 
 document.querySelector('button').onclick = () => {
-
     const text = document.querySelector('input').value;
     socket.emit('message', text)
-    
 }
