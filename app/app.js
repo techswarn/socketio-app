@@ -1,4 +1,3 @@
-
 const socket = io('wss://chat-app-ced8w.ondigitalocean.app/')
 
 socket.on('message', text => {
