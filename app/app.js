@@ -2,12 +2,7 @@ const dotenv = require('dotenv')
 
 dotenv.config({path: './config.env'})
 
-let socket;
-if(process.env.NODE_ENV === 'development') {
-    socket = io('ws://localhost:8080')
-} else if (process.env.NODE_ENV === 'production') {
-    socket = io(`ws://${process.env.APPURL}`)
-}
+const socket = io('ws://chat-app-ced8w.ondigitalocean.app/server')
 
 socket.on('message', text => {
     const el = document.createElement('li');
