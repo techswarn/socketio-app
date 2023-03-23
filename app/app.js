@@ -1,4 +1,4 @@
-const socket = io('wss://localhost')
+const socket = io('wss://websocket-tn4kn.ondigitalocean.app/server')
 
 socket.on('message', text => {
     const el = document.createElement('li');
