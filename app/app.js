@@ -1,4 +1,4 @@
-const socket = io('wss://chat-app-ced8w.ondigitalocean.app')
+const socket = io('wss://localhost')
 
 socket.on('message', text => {
     const el = document.createElement('li');
