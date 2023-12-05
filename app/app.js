@@ -1,5 +1,5 @@
-//const socket = io("wss://wss://socket-app-dg538.ondigitalocean.app/server");
-const socket = io("ws://localhost:8080/");
+const socket = io("wss://socket-app-dg538.ondigitalocean.app/server");
+//const socket = io("ws://localhost:8080/");
 
 socket.on("message", (text) => {
   const el = document.createElement("li");
