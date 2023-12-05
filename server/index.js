@@ -1,30 +1,30 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const http = require('http');
+const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 
-const io = require('socket.io')(server, {
-    cors: {
-      origin: '*',
-      methods: ["GET", "POST"],
-      transports: ['websocket', 'polling'],
-      credentials: true
-    },
-    allowEIO3: true
-})
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+    transports: ["websocket"],
+    credentials: true,
+  },
+  allowEIO3: true,
+});
 
-io.on('connection', (socket) => {
-  console.log('a user connected');
+io.on("connection", (socket) => {
+  console.log("a user connected");
 
-    socket.on('message', (message) => {
-        console.log(message);
-        io.emit('message', `${socket.id.substr(0,2)} said ${message}` );   
-    });
+  socket.on("message", (message) => {
+    console.log(message);
+    io.emit("message", `${socket.id.substr(0, 2)} said ${message}`);
+  });
 });
 
 server.listen(8080, () => {
-  console.log('listening on *:8080');
+  console.log("listening on *:8080");
 });
 
 // const http = require('http').createServer()
@@ -48,7 +48,7 @@ server.listen(8080, () => {
 
 //     socket.on('message', (message) =>{
 //         console.log(message);
-//         io.emit('message', `${socket.id.substr(0,2)} said ${message}` );   
+//         io.emit('message', `${socket.id.substr(0,2)} said ${message}` );
 //     });
 // })
 
