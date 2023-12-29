@@ -1,4 +1,4 @@
-const socket = io("wss://socket-app-dg538.ondigitalocean.app", {
+const socket = io("wss://socket-vm9rq.ondigitalocean.app/", {
   path: "/server",
 });
 //const socket = io("ws://127.0.0.1:8080/");
