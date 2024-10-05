@@ -4,17 +4,17 @@ const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 
-// const io = require("socket.io")(server, {
-//   cors: {
-//     origin: "*",
-//     methods: ["GET", "POST"],
-//     transports: ["websocket"],
-//     credentials: true,
-//   },
-//   allowEIO3: true,
-// });
+const io = require("socket.io")(server, {
+   cors: {
+     origin: "*",
+     methods: ["GET", "POST"],
+     transports: ["websocket"],
+     credentials: true,
+   },
+   allowEIO3: true,
+});
 
-const io = require("socket.io")(server, {});
+//const io = require("socket.io")(server, {});
 
 io.on("connection", (socket) => {
   console.log("a user connected");
