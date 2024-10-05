@@ -3,9 +3,9 @@
 // });
 //const socket = io("ws://127.0.0.1:8080/");
 
-const socket = io("wss://plankton-app-5mqo8.ondigitalocean.app/", {
+const socket = io("wss://server-websocket-ww7ti.ondigitalocean.app/", {
   transports: ["websocket"],
-  path: "/server",
+  path: "/",
 });
 
 socket.on("message", (text) => {
